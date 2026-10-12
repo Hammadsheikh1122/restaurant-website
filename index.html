@@ -4,8 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Royal Bites Restaurant</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -22,7 +28,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 30px;
+      font-size: 32px;
     }
 
     .hero {
@@ -31,7 +37,27 @@
     }
 
     .hero h2 {
-      font-size: 32px;
+      font-size: 30px;
+    }
+
+    .hero p {
+      font-size: 17px;
+    }
+
+    .order-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .order-btn:hover {
+      background: #1da851;
     }
 
     .menu {
@@ -40,29 +66,31 @@
 
     .food {
       background: white;
-      padding: 18px;
-      margin: 12px auto;
-      max-width: 320px;
+      padding: 20px;
+      margin: 15px auto;
+      max-width: 340px;
       border-radius: 12px;
-      box-shadow: 0 3px 10px #00000012;
+      box-shadow: 0 3px 10px #00000015;
     }
 
-    button {
-      background: #18392b;
-      color: white;
-      border: 0;
-      padding: 12px 20px;
-      border-radius: 7px;
-      font-size: 16px;
+    .food h3 {
+      color: #18392b;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #b5651d;
+      font-size: 18px;
     }
 
     footer {
       background: #18392b;
       color: white;
-      padding: 18px;
+      padding: 20px;
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -73,8 +101,15 @@
   <section class="hero">
     <h2>Welcome to Royal Bites</h2>
     <p>Delicious food made with love.</p>
-    <button onclick="showMessage()">Order Now</button>
-    <p id="message"></p>
+
+    <a
+      href="https://wa.me/923001234567?text=Hello%20Royal%20Bites%2C%20I%20want%20to%20place%20an%20order."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="order-btn"
+    >
+      Order on WhatsApp
+    </a>
   </section>
 
   <section class="menu">
@@ -82,31 +117,25 @@
 
     <div class="food">
       <h3>Chicken Burger</h3>
-      <p>Rs. 450</p>
+      <p class="price">Rs. 450</p>
     </div>
 
     <div class="food">
       <h3>Chicken Biryani</h3>
-      <p>Rs. 300</p>
+      <p class="price">Rs. 300</p>
     </div>
 
     <div class="food">
       <h3>Pizza</h3>
-      <p>Rs. 800</p>
+      <p class="price">Rs. 800</p>
     </div>
   </section>
 
   <footer>
     <p>Contact: 0300-0000000</p>
     <p>Demo Restaurant Website</p>
+    <p>© 2026 Royal Bites</p>
   </footer>
-
-  <script>
-    function showMessage() {
-      document.getElementById("message").textContent =
-        "Please contact us to place your order!";
-    }
-  </script>
 
 </body>
 </html>
