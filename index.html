@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Bites Restaurant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf0;
+      color: #29251f;
+      text-align: center;
+    }
+
+    header {
+      background: #18392b;
+      color: white;
+      padding: 25px 12px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .hero {
+      padding: 55px 15px;
+      background: #f3dfb4;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+    }
+
+    .menu {
+      padding: 25px 15px;
+    }
+
+    .food {
+      background: white;
+      padding: 18px;
+      margin: 12px auto;
+      max-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px #00000012;
+    }
+
+    button {
+      background: #18392b;
+      color: white;
+      border: 0;
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #18392b;
+      color: white;
+      padding: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Royal Bites</h1>
+    <p>Fresh Food, Happy Moments!</p>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to Royal Bites</h2>
+    <p>Delicious food made with love.</p>
+    <button onclick="showMessage()">Order Now</button>
+    <p id="message"></p>
+  </section>
+
+  <section class="menu">
+    <h2>Our Menu</h2>
+
+    <div class="food">
+      <h3>Chicken Burger</h3>
+      <p>Rs. 450</p>
+    </div>
+
+    <div class="food">
+      <h3>Chicken Biryani</h3>
+      <p>Rs. 300</p>
+    </div>
+
+    <div class="food">
+      <h3>Pizza</h3>
+      <p>Rs. 800</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact: 0300-0000000</p>
+    <p>Demo Restaurant Website</p>
+  </footer>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").textContent =
+        "Please contact us to place your order!";
+    }
+  </script>
+
+</body>
+</html>
