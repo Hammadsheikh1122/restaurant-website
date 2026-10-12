@@ -1,92 +1,189 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Royal Bites Restaurant</title>
+  <title>Royal Bites | Delicious Food</title>
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: #fffaf0;
-      color: #29251f;
-      text-align: center;
+      color: #222;
+      line-height: 1.6;
     }
 
     header {
       background: #18392b;
       color: white;
-      padding: 25px 12px;
+      text-align: center;
+      padding: 22px 15px;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 32px;
+      font-size: 36px;
     }
 
-    .hero {
-      padding: 55px 15px;
-      background: #f3dfb4;
-    }
-
-    .hero h2 {
-      font-size: 30px;
-    }
-
-    .hero p {
-      font-size: 17px;
-    }
-
-    .order-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
+    nav {
       margin-top: 12px;
     }
 
-    .order-btn:hover {
-      background: #1da851;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25d366;
+      color: #12321f;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1fba59;
     }
 
     .menu {
-      padding: 25px 15px;
+      padding: 45px 20px;
+      text-align: center;
     }
 
-    .food {
-      background: white;
-      padding: 20px;
-      margin: 15px auto;
-      max-width: 340px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px #00000015;
-    }
-
-    .food h3 {
+    .menu h2,
+    .about h2,
+    .contact h2 {
+      font-size: 30px;
       color: #18392b;
+      margin-bottom: 25px;
+    }
+
+    .food-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,.12);
+      padding-bottom: 22px;
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .food-card h3 {
+      margin-top: 15px;
+      font-size: 22px;
+    }
+
+    .food-card p {
+      color: #666;
+      margin: 5px 0 10px;
     }
 
     .price {
+      color: #18392b;
+      font-size: 21px;
       font-weight: bold;
-      color: #b5651d;
-      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .about,
+    .contact {
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .about p,
+    .contact p {
+      max-width: 650px;
+      margin: 10px auto;
+    }
+
+    .contact a:not(.btn) {
+      color: #18392b;
+      overflow-wrap: anywhere;
+    }
+
+    .contact .btn {
+      margin-top: 15px;
     }
 
     footer {
       background: #18392b;
       color: white;
+      text-align: center;
       padding: 20px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 29px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 65px 15px;
+      }
+
+      .hero h2 {
+        font-size: 29px;
+      }
+
+      .menu h2,
+      .about h2,
+      .contact h2 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
@@ -96,46 +193,144 @@
   <header>
     <h1>Royal Bites</h1>
     <p>Fresh Food, Happy Moments!</p>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <h2>Welcome to Royal Bites</h2>
     <p>Delicious food made with love.</p>
+    <a href="#menu" class="btn">Explore Our Menu</a>
+  </section>
+
+  <section class="menu" id="menu">
+    <h2>Our Popular Menu</h2>
+
+    <div class="food-container">
+
+      <div class="food-card">
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=700&q=80"
+          alt="Chicken Burger"
+          loading="lazy"
+        >
+
+        <h3>Chicken Burger</h3>
+        <p>Juicy and delicious burger.</p>
+        <div class="price">Rs. 450</div>
+
+        <a href="#" class="btn order-btn"
+           data-food="Chicken Burger"
+           data-price="450">Order Now</a>
+      </div>
+
+      <div class="food-card">
+        <img
+          src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=700&q=80"
+          alt="Chicken Biryani"
+          loading="lazy"
+        >
+
+        <h3>Chicken Biryani</h3>
+        <p>Traditional and spicy rice.</p>
+        <div class="price">Rs. 300</div>
+
+        <a href="#" class="btn order-btn"
+           data-food="Chicken Biryani"
+           data-price="300">Order Now</a>
+      </div>
+
+      <div class="food-card">
+        <img
+          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+          alt="Pizza"
+          loading="lazy"
+        >
+
+        <h3>Pizza</h3>
+        <p>Cheesy and tasty pizza.</p>
+        <div class="price">Rs. 800</div>
+
+        <a href="#" class="btn order-btn"
+           data-food="Pizza"
+           data-price="800">Order Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to Royal Bites! We love serving tasty food
+      and making every meal special. Enjoy your favourite
+      dishes with us.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact & Orders</h2>
+
+    <p>Have a question or want to place an order?</p>
+
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:+923118380563">03118380563</a>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:hammadsheikh122009@gmail.com">
+        hammadsheikh122009@gmail.com
+      </a>
+    </p>
 
     <a
-      href="https://wa.me/923001234567?text=Hello%20Royal%20Bites%2C%20I%20want%20to%20place%20an%20order."
+      class="btn"
+      href="https://wa.me/923118380563"
       target="_blank"
       rel="noopener noreferrer"
-      class="order-btn"
     >
-      Order on WhatsApp
+      Contact on WhatsApp
     </a>
   </section>
 
-  <section class="menu">
-    <h2>Our Menu</h2>
-
-    <div class="food">
-      <h3>Chicken Burger</h3>
-      <p class="price">Rs. 450</p>
-    </div>
-
-    <div class="food">
-      <h3>Chicken Biryani</h3>
-      <p class="price">Rs. 300</p>
-    </div>
-
-    <div class="food">
-      <h3>Pizza</h3>
-      <p class="price">Rs. 800</p>
-    </div>
-  </section>
-
   <footer>
-    <p>Contact: 0300-0000000</p>
-    <p>Demo Restaurant Website</p>
-    <p>© 2026 Royal Bites</p>
+    <p>&copy; 2026 Royal Bites. All rights reserved.</p>
+    <p>Made with care.</p>
   </footer>
+
+  <script>
+    const orderButtons = document.querySelectorAll(".order-btn");
+
+    orderButtons.forEach(function(button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const food = button.dataset.food;
+        const price = button.dataset.price;
+
+        const message =
+          "Hello Royal Bites! I want to order " +
+          food + " (Rs. " + price + ").";
+
+        const phone = "923118380563";
+
+        const url =
+          "https://wa.me/" + phone +
+          "?text=" + encodeURIComponent(message);
+
+        window.open(url, "_blank");
+      });
+    });
+  </script>
 
 </body>
 </html>
+
+
